@@ -14,10 +14,23 @@ EXAMPLE №1 all_of, any_of, none_of
 using namespace std;
 Задача №1 - На футбольном поле  11 игроков мужского рода, задача проверить являються номера игроков четными числами ли нет
                номера игроков={3,5,7,9,13,33,46,47,99,97,91}; 
-               Если все yt четные вивести -"All numbers is odd"
-               If all even yf
+               Если все номера четные вивести -"All numbers is odd";
+               Если все не четные - "Some number is Even";
+
 int main(){
+  vector<int>players={3,5,7,9,13,33,35,47,99,97,91};
 
-
-
+   if(all_of(players.begin(),players.end(), [](int i){return i%2==1;}))
+           cout<<"The all numbers is Odd";
+        else 
+           cout<<"Some number is Even";
+   
+   
+   return 0;
 }
+
+
+
+
+
+

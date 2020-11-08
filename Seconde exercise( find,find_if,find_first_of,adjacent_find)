@@ -60,3 +60,24 @@ int main() {
 	return 0;
 	//Для того чтобы а и А воспринимались как один знак нужно кое-что извенить, изменения обозначины * 
 }
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Четвертая задача adjacent_find()- игроки выходят по очереди и наша задача проверить нету ли повторений номера игрока одним за другим.
+ если появилось повторение вывесли  "The first repited number is : ..."
+ 
+ bool myfunction(int i, int j) { return (i == j); }
+
+int main() {
+
+	vector<int>team = { 11,2,33,33,4,5,8,8,66,3 };
+	vector<int>::iterator it;
+	it = adjacent_find(team.begin(), team.end());
+	if(it!=team.end())
+	cout << "The first repited number is " << *it;
+	   
+	//Дополнительная проверка если будет еще одно повторение 
+	it = adjacent_find(++it, team.end(), myfunction);
+	if (it != team.end())
+		cout << "The seconde repited is : " << *it;
+
+	return 0;
+}

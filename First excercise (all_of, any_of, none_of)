@@ -35,7 +35,7 @@ int main(){
 int main(){
   vector<int>players={3,5,7,9,13,33,35,47,99,97,91};
 
-   if(none_of(players.begin(),players.end(), [](int i){return i<2;}))
+   if(none_of(players.begin(),players.end(), [](int i){return i<6;}))
            cout<<"net nety";
            else 
            cout<<"da est";

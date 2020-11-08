@@ -35,4 +35,28 @@ int main() {
 		cout << "not founded odd number";
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
-Третья задача find_first_of()-
+Третья задача find_first_of()-у нас есть последовательность букв {a,b,c}  и вторая последовательность {c,a,b}
+Задача проверить проверить и вывести буквe которая первая совпадеть.
+*#include <cctype>
+*bool lol(char c1, char c2){
+return (tolower (c1)== tolower (c2));
+}
+
+int main() {
+
+	int mychar[] = { '*A','b','c' };
+
+	vector<char>kaka(mychar, mychar + 3);
+	vector<char>::iterator it;
+
+	int my[] = { 'c','a','b' };
+
+	it = find_first_of(kaka.begin(), kaka.end(), my, my + 3, *lol);
+	if (it != kaka.end())
+		cout << "First match is : " << *it << endl;
+	else
+		cout << "NO one match" << endl;
+
+	return 0;
+	//Для того чтобы а и А воспринимались как один знак нужно кое-что извенить, изменения обозначины * 
+}

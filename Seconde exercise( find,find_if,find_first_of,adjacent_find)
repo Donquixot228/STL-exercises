@@ -1,0 +1,25 @@
+// Первая задача find() -Найти в стартовом составе команды игрока с номеров 28;
+Если такого игрока в команле нету вывести - "The team doesn't have this player "
+Если такой игрок есть в команде вывести - "The team have palyer with number 28 "
+
+
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+
+
+int main(){
+
+  vector<int>team = { 1,22,3,44,5,56,23,28 };
+	vector<int>::iterator it = find(team.begin(), team.end(), 28);
+  
+	if (it != team.end())
+		cout << "We have this player";
+	else
+		cout << "We doesnt have this player";
+
+
+}

@@ -1,1 +1,33 @@
 Задача count()-
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+
+//задача состоит в том чтобы релизовать алгоритм count  в нашей задаче
+/*
+ на поле вышло х игроков с одинаковым номером 4  задача подсчитать х игроков с ноером 4 и вывести число 
+*/
+using namespace std;
+
+int main() {
+	
+	vector<int>team = { 1,2,4,4,4,4,4,5,6,7,8 };
+	int ka = count(team.begin(), team.end(), 4);
+	cout << ka;
+
+}
+
+Задача count_if- 
+задача подсчитать количество не четных игроков 
+*/
+using namespace std;
+bool isodd(int i) {
+	return (i % 2 == 1);
+}
+int main() {
+	
+	vector<int>team = { 1,2,4,4,4,4,4,5,6,7,8 };
+
+	int odd_numb = count_if(team.begin(), team.end(), isodd);
+	cout << "The sum if all odd numbers is : " << odd_numb;
